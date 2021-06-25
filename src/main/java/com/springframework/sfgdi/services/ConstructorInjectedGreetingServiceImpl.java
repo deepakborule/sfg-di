@@ -10,7 +10,7 @@ public class ConstructorInjectedGreetingServiceImpl implements GreetingService {
 	@Override
 	public String sayGreeting() {
 		
-		return "HelloWorldGreeting";
+		return "Constructor--HelloWorldGreeting";
 	}
 	
 	

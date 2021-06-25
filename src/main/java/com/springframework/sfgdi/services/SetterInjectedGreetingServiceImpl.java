@@ -10,7 +10,7 @@ public class SetterInjectedGreetingServiceImpl implements GreetingService {
 	@Override
 	public String sayGreeting() {
 		
-		return "HelloWorldGreeting";
+		return "Setter--HelloWorldGreeting";
 	}
 	
 	

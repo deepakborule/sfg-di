@@ -5,14 +5,14 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
-
+@Primary
 @Service
-public class PropertyInjectedGreetingServiceImpl implements GreetingService {
+public class PrimaryGreetingServiceImpl implements GreetingService {
 
 	@Override
 	public String sayGreeting() {
 		
-		return "Property --HelloWorldGreeting";
+		return "Primary--HelloWorldGreeting";
 	}
 	
 	
