@@ -30,13 +30,15 @@ public class FakeDataPropertyConfigController {
 		return fakeDataSource;
 	}
 	
+	/*
+	 *  Even without this code we can read properties from property file
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer properties()
 	{
 		PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
 		return propertySourcesPlaceholderConfigurer;
 		
-	}
+	}*/
 	
 
 }
