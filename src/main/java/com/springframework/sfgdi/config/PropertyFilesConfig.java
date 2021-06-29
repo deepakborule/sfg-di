@@ -8,6 +8,7 @@ import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.stereotype.Controller;
 
+import com.springframework.sfgdi.examplebeans.AppPropertiesReaderBean;
 import com.springframework.sfgdi.examplebeans.FakeDataSource;
 import com.springframework.sfgdi.examplebeans.FakeJmsBroker;
 
@@ -39,6 +40,15 @@ public class PropertyFilesConfig {
 	@Value("${com.jms.url}")
 	String jmsUrl;
 	
+
+	@Value("${com.app.username}")
+	String appUser;
+	@Value("${com.app.password}")
+	String appPassword;
+	
+	@Value("${com.app.url}")
+	String appUrl;
+	
 	
 	@Bean
 	public FakeDataSource fakeDataSource()
@@ -59,6 +69,16 @@ public class PropertyFilesConfig {
 		fakeJmsBroker.setPassword(jmsPassword);
 		fakeJmsBroker.setUrl(jmsUrl);
 		return fakeJmsBroker;
+	}
+	
+	@Bean
+	public AppPropertiesReaderBean appPropertiesReaderBean()
+	{
+		AppPropertiesReaderBean appPropertiesReaderBean = new AppPropertiesReaderBean();
+		appPropertiesReaderBean.setUser(appUser);
+		appPropertiesReaderBean.setPassword(appPassword);
+		appPropertiesReaderBean.setUrl(appUrl);
+		return appPropertiesReaderBean;
 	}
 	
 	/*

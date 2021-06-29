@@ -9,6 +9,7 @@ import com.springframework.sfgdi.controllers.I18nController;
 import com.springframework.sfgdi.controllers.MyController;
 import com.springframework.sfgdi.controllers.PropertyInjectedController;
 import com.springframework.sfgdi.controllers.SetterInjectedController;
+import com.springframework.sfgdi.examplebeans.AppPropertiesReaderBean;
 import com.springframework.sfgdi.examplebeans.FakeDataSource;
 import com.springframework.sfgdi.examplebeans.FakeJmsBroker;
 
@@ -50,6 +51,13 @@ public class SfgDiApplication {
 		System.out.println(fakeJmsBroker.getUser());
 		System.out.println(fakeJmsBroker.getPassword());
 		System.out.println(fakeJmsBroker.getUrl());
+		
+		System.out.println("application Properties..............");
+		
+		AppPropertiesReaderBean appPropertiesReaderBean = context.getBean(AppPropertiesReaderBean.class);
+		System.out.println(appPropertiesReaderBean.getUser());
+		System.out.println(appPropertiesReaderBean.getPassword());
+		System.out.println(appPropertiesReaderBean.getUrl());
 		
 	}
 
