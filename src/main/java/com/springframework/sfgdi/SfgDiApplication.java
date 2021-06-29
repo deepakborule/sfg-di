@@ -9,6 +9,7 @@ import com.springframework.sfgdi.controllers.I18nController;
 import com.springframework.sfgdi.controllers.MyController;
 import com.springframework.sfgdi.controllers.PropertyInjectedController;
 import com.springframework.sfgdi.controllers.SetterInjectedController;
+import com.springframework.sfgdi.examplebeans.FakeDataSource;
 
 @SpringBootApplication
 public class SfgDiApplication {
@@ -34,6 +35,13 @@ public class SfgDiApplication {
 		System.out.println("------- Constructor Injected Controller--------------");
 		ConstructorInjectedController ciController = context.getBean(ConstructorInjectedController.class);
 		System.out.println(ciController.getGreeting());
+		
+		
+		FakeDataSource fakeDataSource = context.getBean(FakeDataSource.class);
+		System.out.println(fakeDataSource.getUser());
+		System.out.println(fakeDataSource.getPassword());
+		System.out.println(fakeDataSource.getUrl());
+		
 	}
 
 }
